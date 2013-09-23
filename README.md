@@ -2,12 +2,21 @@ sh-startingproject
 ================
 
 shell script do download the latest versions of:
+
 unsemantic grid
+
 jquery
+
 unserscorejs
+
 knockout
+
 sammyjs
+
 conditionizr
+
+
+
 
 and set up a base folder structure to start working.
 
