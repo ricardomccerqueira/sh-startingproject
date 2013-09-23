@@ -4,17 +4,12 @@ sh-startingproject
 shell script do download the latest versions of:
 
 unsemantic grid
-
 jquery
-
 unserscorejs
-
 knockout
-
 sammyjs
-
 conditionizr
-
+html5boilerplate plugins
 
 
 
