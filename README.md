@@ -1,6 +1,17 @@
-sh-getunsemantic
+sh-startingproject
 ================
 
-simple shell script do download unsemantic grid and set up my folder structure
+shell script do download the latest versions of:
+unsemantic grid
+jquery
+unserscorejs
+knockout
+sammyjs
+conditionizr
 
-example: SITENAME=MYSITE ./unsemantic.sh
+and set up a base folder structure to start working.
+
+
+
+
+example: SITENAME=MYSITE ./buildproject.sh
