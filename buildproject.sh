@@ -45,9 +45,10 @@ echo "Downloading html5 boilerplate plugin rewrite"
 
 curl https://raw.github.com/h5bp/html5-boilerplate/master/js/plugins.js > www/js/plugins.js
 
+echo "Cleaning the folder"
 
-##cd ../
-##rm unsemantic.sh
-
+rm -rf .git
+rm README.md
+rm buildproject.sh
 
 echo "WORK TIME"
