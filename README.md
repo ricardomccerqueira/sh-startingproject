@@ -24,4 +24,4 @@ and set up a base folder structure to start working.
 
 
 
-example: SITENAME=MYSITE ./buildproject.sh
+just call./buildproject.sh
