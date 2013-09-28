@@ -34,6 +34,12 @@
 		  <link rel="stylesheet" href="css/ie.css" />
 		<![endif]-->
         <link rel="stylesheet" href="css/main.css">
+
+        <script type="text/javascript" src="js/lib/conditionizr.js"></script>
+        <script type="text/javascript" src="js/lib/knockout.js"></script>
+        <script type="text/javascript" src="js/lib/sammyjs.js"></script>
+        <script type="text/javascript" src="js/lib/underscore.js"></script>
+        <script type="text/javascript" src="js/plugins/plugins.js"></script>
     </head>
     <body>
         <!--[if lte IE 7]>
@@ -62,15 +68,13 @@
 
 			</div>
 		</footer>
-        
-        <script type="text/javascript" src="js/lib/conditionizr.js"></script>
-        <script type="text/javascript" src="js/lib/knockout.js"></script>
-        <script type="text/javascript" src="js/lib/sammyjs.js"></script>
-        <script type="text/javascript" src="js/lib/underscore.js"></script>
-        <script type="text/javascript" src="js/plugins/plugins.js"></script>
-
-        <script type="text/javascript" src="js/NAMESPACE.js"></script>
-        <script type="text/javascript" src="js/Globals.js"></script>
-        <script type="text/javascript" src="js/Routes.js"></script>
     </body>
+
+    <script type="text/javascript" src="js/NAMESPACE.js"></script>
+    <script type="text/javascript" src="js/Globals.js"></script>
+    <script type="text/javascript" src="js/Routes.js"></script>
+
+    <script>
+    	NAMESPACE.init();
+    </script>
 </html>
