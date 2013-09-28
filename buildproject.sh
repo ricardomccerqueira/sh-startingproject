@@ -1,6 +1,15 @@
+echo "Please Enter site title ( no spaces )"
+read siteTitle
+
+echo "Please Enter javascript namespace"
+read namespace
+
+
 echo "Download unsemantic"
 
 git clone https://github.com/nathansmith/unsemantic.git
+
+echo "Cleaning unsemantic folder"
 
 mv unsemantic/assets/sass www/
 
@@ -13,37 +22,53 @@ do
 	fi
 done
 
+rm partials/_demo.sass
+rm partials/_text.sass
+
 cd ../../
 
 rm -rf unsemantic
 
+echo "Creating javascript folders"
+
+mkdir www/js/plugins
+mkdir www/js/lib
+
 echo "Downloading jquery2"
 
-curl http://code.jquery.com/jquery-2.0.3.min.js > www/js/jquery2.js
+curl http://code.jquery.com/jquery-2.0.3.min.js > www/js/lib/jquery2.js
 
 echo "Downloading jquery1.latest"
 
-curl http://code.jquery.com/jquery-latest.min.js > www/js/jquery.js
+curl http://code.jquery.com/jquery-latest.min.js > www/js/lib/jquery.js
 
 echo "Downloading knockout"
 
-curl http://knockoutjs.com/downloads/knockout-2.3.0.js > www/js/knockout.js
+curl http://knockoutjs.com/downloads/knockout-2.3.0.js > www/js/lib/knockout.js
 
 echo "Downloading underscorejs"
 
-curl http://underscorejs.org/underscore-min.js > www/js/underscore.js
+curl http://underscorejs.org/underscore-min.js > www/js/lib/underscore.js
 
 echo "Downloading sammyjs"
 
-curl https://raw.github.com/quirkey/sammy/master/lib/min/sammy-latest.min.js > www/js/sammyjs.js
+curl https://raw.github.com/quirkey/sammy/master/lib/min/sammy-latest.min.js > www/js/lib/sammyjs.js
 
 echo "Downloading conditionizr"
 
-curl https://raw.github.com/conditionizr/conditionizr/master/src/conditionizr.js > www/js/conditionizr.js
+curl https://raw.github.com/conditionizr/conditionizr/master/src/conditionizr.js > www/js/lib/conditionizr.js
 
 echo "Downloading html5 boilerplate plugin rewrite"
 
-curl https://raw.github.com/h5bp/html5-boilerplate/master/js/plugins.js > www/js/plugins.js
+curl https://raw.github.com/h5bp/html5-boilerplate/master/js/plugins.js > www/js/plugins/plugins.js
+
+
+echo "Editing FIles to match configuration"
+
+sed -i '' 's/SITE_TITLE/'$siteTitle'/' www/index.html
+sed -i '' 's/NAMESPACE/'$namespace'/' www/js/App.js 
+sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Globals.js
+sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Routes.js
 
 echo "Cleaning the folder"
 

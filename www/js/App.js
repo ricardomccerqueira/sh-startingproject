@@ -1,0 +1,5 @@
+var NAMESPACE={
+	init:function(){
+
+	}
+}
