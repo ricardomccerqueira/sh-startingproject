@@ -4,14 +4,13 @@ read siteTitle
 echo "Please Enter javascript namespace"
 read namespace
 
-
 echo "Download unsemantic"
 
 git clone https://github.com/nathansmith/unsemantic.git
 
 echo "Cleaning unsemantic folder"
 
-mv unsemantic/assets/sass www/
+cp -r unsemantic/assets/sass www/
 
 cd www/sass/
 
@@ -33,6 +32,10 @@ echo "Creating javascript folders"
 
 mkdir www/js/plugins
 mkdir www/js/lib
+mkdir www/img
+
+mv www/js/NAMESPACE.js www/js/$namespace.js
+
 
 echo "Downloading jquery2"
 
@@ -62,11 +65,11 @@ echo "Downloading html5 boilerplate plugin rewrite"
 
 curl https://raw.github.com/h5bp/html5-boilerplate/master/js/plugins.js > www/js/plugins/plugins.js
 
-
 echo "Editing FIles to match configuration"
 
 sed -i '' 's/SITE_TITLE/'$siteTitle'/' www/index.html
-sed -i '' 's/NAMESPACE/'$namespace'/' www/js/App.js 
+sed -i '' 's/NAMESPACE/'$namespace'/' www/index.html
+sed -i '' 's/NAMESPACE/'$namespace'/' www/js/$namespace.js 
 sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Globals.js
 sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Routes.js
 
