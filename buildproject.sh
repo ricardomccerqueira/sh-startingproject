@@ -59,7 +59,11 @@ curl https://raw.github.com/quirkey/sammy/master/lib/min/sammy-latest.min.js > w
 
 echo "Downloading conditionizr"
 
-curl https://raw.github.com/conditionizr/conditionizr/master/src/conditionizr.js > www/js/lib/conditionizr.js
+curl https://raw.github.com/conditionizr/conditionizr/master/dist/conditionizr.js > www/js/lib/conditionizr.js
+
+echo "Downloading enquirejs"
+
+curl https://raw.github.com/WickyNilliams/enquire.js/master/dist/enquire.js > www/js/lib/enquire.js
 
 echo "Downloading html5 boilerplate plugin rewrite"
 
