@@ -17,11 +17,15 @@ shell script do download the latest versions of:
 
 - html5boilerplate plugins
 
-
-
-and set up a base folder structure to start working.
-
+- enquirejs
 
 
 
-just call./buildproject.sh
+And set up a basic folder structure to start working with a mobile first aproach.
+
+
+
+
+just call./buildproject.sh ( this script is still under development )
+
+
