@@ -16,7 +16,7 @@ cd www/sass/
 
 for item in *.sass
 do
-	if test "$item" != "unsemantic-grid-responsive.sass" && test "$item" != "ie.sass"; then
+	if test "$item" != "unsemantic-grid-base.sass" && test "$item" != "unsemantic-grid-desktop.sass" && test "$item" != "unsemantic-grid-tablet.sass" && test "$item" != "unsemantic-grid-responsive-tablet.sass" && test "$item" != "unsemantic-grid-mobile.sass" && test "$item" != "ie.sass"; then
 		rm "$item"
 	fi
 done
@@ -74,7 +74,7 @@ echo "Editing FIles to match configuration"
 sed -i '' 's/SITE_TITLE/'$siteTitle'/' www/index.html
 sed -i '' 's/NAMESPACE/'$namespace'/' www/index.html
 sed -i '' 's/NAMESPACE/'$namespace'/' www/js/$namespace.js 
-sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Globals.js
+sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Config.js
 sed -i '' 's/NAMESPACE/'$namespace'/' www/js/Routes.js
 
 echo "Cleaning the folder"

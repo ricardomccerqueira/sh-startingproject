@@ -27,14 +27,15 @@
 		  <script type="text/javascript" src="js/lib/jquery.js"></script>
 		<![endif]-->
 		<!--[if (gt IE 8) | (IEMobile)]><!-->
-		  <link rel="stylesheet" href="css/unsemantic-grid-responsive.css" />
 		  <script type="text/javascript" src="js/lib/jquery2.js"></script>
 		<!--<![endif]-->
 		<!--[if (lt IE 9) & (!IEMobile)]>
 		  <link rel="stylesheet" href="css/ie.css" />
 		<![endif]-->
+        <link rel="stylesheet" href="css/unsemantic-grid-base.css" />
         <link rel="stylesheet" href="css/main.css">
 
+        <script type="text/javascript" src="js/lib/enquire.js"></script>
         <script type="text/javascript" src="js/lib/conditionizr.js"></script>
         <script type="text/javascript" src="js/lib/knockout.js"></script>
         <script type="text/javascript" src="js/lib/sammyjs.js"></script>
@@ -45,33 +46,51 @@
         <!--[if lte IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		<header class="fluid-container">
-			<div class="grid-container">
+        <header class="fluid-container">
+            <div class="grid-container">
+                container
+            </div>
 
-			</div>
+            <nav class="hide-on-mobile">
+                show on desktop / tablet
+            </nav>
 
-			<nav class="show-on-desktop hide-on-mobile">
-				
-			</nav>
+            <nav class="hide-on-desktop hide-on-tablet">
+                show on mobile
+            </nav> 
 
-			<nav class="hide-on-desktop show-on-mobile">
-				
-			</nav>
-		</header>
+            <div class="hide-on-desktop hide-on-mobile">
+                show on tablet
+            </div>
+        </header>
         
-		<div id="main-wrapper" class="fluid-container">
-			READY
-		</div>	
-	
-		<footer class="fluid-container">
-			<div class="grid-container">
+        <div id="main-wrapper" class="fluid-container">
+            
+        </div>  
+    
+        <footer class="fluid-container">
+            <div class="grid-container">
+                <div class="grid-50 mobile-grid-50">
+                    50
+                </div>
 
-			</div>
-		</footer>
+                <div class="grid-50 mobile-grid-50">
+                    50
+                </div>
+
+                <div class="grid-50 mobile-grid-100 tablet-grid-50"> 
+                    50 / 100
+                </div>
+
+                <div class="grid-50 mobile-grid-100 tablet-grid-50">
+                    50 / 100
+                </div>
+            </div>
+        </footer>
     </body>
 
     <script type="text/javascript" src="js/NAMESPACE.js"></script>
-    <script type="text/javascript" src="js/Globals.js"></script>
+    <script type="text/javascript" src="js/Config.js"></script>
     <script type="text/javascript" src="js/Routes.js"></script>
 
     <script>
