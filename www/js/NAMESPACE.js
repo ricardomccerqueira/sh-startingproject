@@ -21,6 +21,7 @@ var NAMESPACE = (function(){
 
                 match:function(){
                     var objs = document.getElementsByClassName(obj.class);
+                    switchImages(key);
 
                     for(var i=0; i<objs.length; i++){
                         objs[i].disabled = null;
@@ -35,6 +36,16 @@ var NAMESPACE = (function(){
                     }
                 }
             });
+        }
+    };
+
+    function switchImages(format){
+        for (var i =0; i<document.getElementsByTagName("img").length; i++){
+            var attr = document.getElementsByTagName("img")[i].getAttribute(format);
+            
+            if(attr){
+                document.getElementsByTagName("img")[i].setAttribute("src",attr);
+            }
         }
     };
 
