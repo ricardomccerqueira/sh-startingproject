@@ -32,7 +32,6 @@ echo "Creating javascript folders"
 
 mkdir www/js/plugins
 mkdir www/js/lib
-mkdir www/img
 
 mv www/js/NAMESPACE.js www/js/$namespace.js
 

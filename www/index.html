@@ -22,13 +22,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>SITE_TITLE</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">		
-		<!--[if lt IE 9]>
-		  <script type="text/javascript" src="js/lib/jquery.js"></script>
-		<![endif]-->
-		<!--[if (gt IE 8) | (IEMobile)]><!-->
-		  <script type="text/javascript" src="js/lib/jquery2.js"></script>
-		<!--<![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--[if (lt IE 9) & (!IEMobile)]>
 		  <link rel="stylesheet" href="css/ie.css" />
 		<![endif]-->
@@ -36,10 +30,6 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script type="text/javascript" src="js/lib/enquire.js"></script>
-        <script type="text/javascript" src="js/lib/conditionizr.js"></script>
-        <script type="text/javascript" src="js/lib/knockout.js"></script>
-        <script type="text/javascript" src="js/lib/sammyjs.js"></script>
-        <script type="text/javascript" src="js/lib/underscore.js"></script>
         <script type="text/javascript" src="js/plugins/plugins.js"></script>
     </head>
     <body>
@@ -70,12 +60,12 @@
     
         <footer class="fluid-container">
             <div class="grid-container">
-                <div class="grid-50 mobile-grid-50">
-                    50
+                <div class="grid-50 tablet-grid-50 mobile-grid-50">
+                    <img style="width:100%" src="img/lorempixel_mobile.jpg" mobile="img/lorempixel_mobile.jpg" tablet="img/lorempixel_tablet.jpg" desktop="img/lorempixel_desktop.jpg" alt="">
                 </div>
 
-                <div class="grid-50 mobile-grid-50">
-                    50
+                <div class="grid-50 tablet-grid-50 mobile-grid-50">
+                    <img style="width:100%" src="img/lorempixel_mobile.jpg" mobile="img/lorempixel_mobile.jpg" tablet="img/lorempixel_tablet.jpg" desktop="img/lorempixel_desktop.jpg" alt="">
                 </div>
 
                 <div class="grid-50 mobile-grid-100 tablet-grid-50"> 
@@ -91,9 +81,22 @@
 
     <script type="text/javascript" src="js/NAMESPACE.js"></script>
     <script type="text/javascript" src="js/Config.js"></script>
-    <script type="text/javascript" src="js/Routes.js"></script>
-
+    
     <script>
     	NAMESPACE.init();
     </script>
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <![endif]-->
+    <!--[if (gt IE 8) | (IEMobile)]><!-->
+      <script type="text/javascript" src="js/lib/jquery2.js"></script>
+    <!--<![endif]-->
+	
+    
+    <script type="text/javascript" src="js/Routes.js"></script>
+    <script type="text/javascript" src="js/lib/conditionizr.js"></script>
+    <script type="text/javascript" src="js/lib/knockout.js"></script>
+    <script type="text/javascript" src="js/lib/sammyjs.js"></script>
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
 </html>

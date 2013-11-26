@@ -60,7 +60,7 @@ var NAMESPACE = (function(){
     };
 
     var public = {
-        init:init
+ 	init:init
     }
 
     return public;
