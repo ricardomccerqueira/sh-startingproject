@@ -23,18 +23,17 @@
         <title>SITE_TITLE</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--[if (lt IE 9) & (!IEMobile)]>
-		  <link rel="stylesheet" href="css/ie.css" />
-		<![endif]-->
+		<!--[if (lt IE 9)]>
+          <link rel="stylesheet" href="css/ie.css" />
+        <![endif]-->
         <link rel="stylesheet" href="css/unsemantic-grid-base.css" />
         <link rel="stylesheet" href="css/main.css">
 
-        <script type="text/javascript" src="js/lib/enquire.js"></script>
-        <script type="text/javascript" src="js/plugins/plugins.js"></script>
+        <script type="text/javascript" src="js/lib/modernizr.custom.js"></script>
     </head>
     <body>
         <!--[if lte IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="fluid-container">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <header class="fluid-container">
             <div class="grid-container">
@@ -79,24 +78,23 @@
         </footer>
     </body>
 
-    <script type="text/javascript" src="js/NAMESPACE.js"></script>
-    <script type="text/javascript" src="js/Config.js"></script>
-    
-    <script>
-    	NAMESPACE.init();
-    </script>
+    <script type="text/javascript">
+        (function(){
+            Modernizr.load([
+                {
+                    test: window.matchMedia,
+                    nope: "js/lib/media.match.min.js"
+                },
+                {
+                    both: [ "js/lib/enquire.js", "js/plugins/plugins.js", 'js/NAMESPACE.js', 'js/Config.js' ],
+                    
+                    complete: function(){
+                      NAMESPACE.init();
 
-    <!--[if lt IE 9]>
-      <script type="text/javascript" src="js/lib/jquery.js"></script>
-    <![endif]-->
-    <!--[if (gt IE 8) | (IEMobile)]><!-->
-      <script type="text/javascript" src="js/lib/jquery2.js"></script>
-    <!--<![endif]-->
-	
-    
-    <script type="text/javascript" src="js/Routes.js"></script>
-    <script type="text/javascript" src="js/lib/conditionizr.js"></script>
-    <script type="text/javascript" src="js/lib/knockout.js"></script>
-    <script type="text/javascript" src="js/lib/sammyjs.js"></script>
-    <script type="text/javascript" src="js/lib/underscore.js"></script>
+                      Modernizr.load("js/lib/jquery.js");
+                    }
+                }
+            ]);
+        })();
+    </script>
 </html>

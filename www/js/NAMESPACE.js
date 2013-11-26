@@ -1,6 +1,35 @@
+if (typeof document.getElementsByClassName!='function') {
+    document.getElementsByClassName = function() {
+        var elms = document.getElementsByTagName('*');
+        var ei = new Array();
+        for (i=0;i<elms.length;i++) {
+            if (elms[i].getAttribute('class')) {
+                ecl = elms[i].getAttribute('class').split(' ');
+                for (j=0;j<ecl.length;j++) {
+                    if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                        ei.push(elms[i]);
+                    }
+                }
+            } else if (elms[i].className) {
+                ecl = elms[i].className.split(' ');
+                for (j=0;j<ecl.length;j++) {
+                    if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                        ei.push(elms[i]);
+                    }
+                }
+            }
+        }
+        return ei;
+    }
+}
+
 var NAMESPACE = (function(){
     function init(){
-        mediaQuery();
+        if(isIE() && isIE()<9){
+
+        }else{
+            mediaQuery();
+        }
     };
 
     function mediaQuery(){
@@ -15,12 +44,12 @@ var NAMESPACE = (function(){
 
                 setup:function(){
                     for(var i=0; i<obj.css.length; i++){
-                        loadCss('css/'+obj.css[i],obj.class);
+                        loadCss('css/'+obj.css[i],obj.className);
                     }
                 },
 
                 match:function(){
-                    var objs = document.getElementsByClassName(obj.class);
+                    var objs = document.getElementsByClassName(obj.className);
                     switchImages(key);
 
                     for(var i=0; i<objs.length; i++){
@@ -29,7 +58,7 @@ var NAMESPACE = (function(){
                 },      
                                     
                 unmatch:function(){
-                    var objs = document.getElementsByClassName(obj.class);
+                    var objs = document.getElementsByClassName(obj.className);
 
                     for(var i=0; i<objs.length; i++){
                         objs[i].disabled = true;
@@ -59,8 +88,13 @@ var NAMESPACE = (function(){
         document.getElementsByTagName("head")[0].appendChild(link);
     };
 
+    function isIE() {
+        var browserNav = navigator.userAgent.toLowerCase();
+        return (browserNav.indexOf('msie') != -1) ? parseInt(browserNav.split('msie')[1]) : false;
+    };
+
     var public = {
- 	init:init
+    init:init
     }
 
     return public;

@@ -16,7 +16,7 @@ cd www/sass/
 
 for item in *.sass
 do
-	if test "$item" != "unsemantic-grid-base.sass" && test "$item" != "unsemantic-grid-desktop.sass" && test "$item" != "unsemantic-grid-tablet.sass" && test "$item" != "unsemantic-grid-responsive-tablet.sass" && test "$item" != "unsemantic-grid-mobile.sass" && test "$item" != "ie.sass"; then
+	if test "$item" != "unsemantic-grid-base.sass" && test "$item" != "main.sass" && test "$item" != "unsemantic-grid-desktop.sass" && test "$item" != "unsemantic-grid-tablet.sass" && test "$item" != "unsemantic-grid-responsive-tablet.sass" && test "$item" != "unsemantic-grid-mobile.sass" && test "$item" != "ie.sass"; then
 		rm "$item"
 	fi
 done
@@ -34,6 +34,7 @@ mkdir www/js/plugins
 mkdir www/js/lib
 
 mv www/js/NAMESPACE.js www/js/$namespace.js
+mv www/js/modernizr.custom.js www/js/lib/modernizr.custom.js
 
 
 echo "Downloading jquery2"
