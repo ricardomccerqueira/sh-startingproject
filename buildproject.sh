@@ -49,19 +49,19 @@ echo "Downloading knockout"
 
 curl http://knockoutjs.com/downloads/knockout-2.3.0.js > www/js/lib/knockout.js
 
-echo "Downloading underscorejs"
+echo "Downloading underscorejs latest version"
 
 curl http://underscorejs.org/underscore-min.js > www/js/lib/underscore.js
 
-echo "Downloading sammyjs"
+echo "Downloading sammyjs latest version"
 
 curl https://raw.github.com/quirkey/sammy/master/lib/min/sammy-latest.min.js > www/js/lib/sammyjs.js
 
-echo "Downloading conditionizr"
+echo "Downloading conditionizr latest version"
 
 curl https://raw.github.com/conditionizr/conditionizr/master/dist/conditionizr.js > www/js/lib/conditionizr.js
 
-echo "Downloading enquirejs"
+echo "Downloading enquirejs latest version"
 
 curl https://raw.github.com/WickyNilliams/enquire.js/master/dist/enquire.js > www/js/lib/enquire.js
 
@@ -69,7 +69,10 @@ echo "Downloading html5 boilerplate plugin rewrite"
 
 curl https://raw.github.com/h5bp/html5-boilerplate/master/js/plugins.js > www/js/plugins/plugins.js
 
-echo "Editing FIles to match configuration"
+echo "Editing Files to match configuration"
+
+cat www/js/plugins.js >> www/js/plugins/plugins.js
+rm -f www/js/plugins.js
 
 sed -i '' 's/SITE_TITLE/'$siteTitle'/' www/index.html
 sed -i '' 's/NAMESPACE/'$namespace'/' www/index.html
